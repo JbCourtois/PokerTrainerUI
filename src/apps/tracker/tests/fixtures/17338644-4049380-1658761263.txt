@@ -1,0 +1,22 @@
+Winamax Poker - Go Fast "Floride" - HandId: #17338644-4049380-1658761263 - Holdem no limit (0.05€/0.10€) - 2022/07/25 15:01:03 UTC
+Table: 'Floride' 6-max (real money) Seat #6 is the button
+Seat 1: Oursapwal (10.79€)
+Seat 2: GibGibGib (2.35€)
+Seat 3: kylianOM13 (16.58€)
+Seat 4: Daverun (9.26€)
+Seat 5: P3ck-oSS (10€)
+Seat 6: 1rhumm1 (6.37€)
+*** ANTE/BLINDS ***
+Oursapwal posts small blind 0.05€
+GibGibGib posts big blind 0.10€
+Dealt to GibGibGib [Tc Td]
+*** PRE-FLOP ***
+kylianOM13 folds
+Daverun folds
+P3ck-oSS folds
+1rhumm1 folds
+Oursapwal folds
+GibGibGib collected 0.15€ from pot
+*** SUMMARY ***
+Total pot 0.15€ | No rake
+Seat 2: GibGibGib (big blind) won 0.15€

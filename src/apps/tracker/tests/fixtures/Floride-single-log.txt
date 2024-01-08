@@ -1,0 +1,29 @@
+Winamax Poker - Go Fast "Floride" - HandId: #17744560-312114-1666537229 - Holdem no limit (0.05€/0.10€) - 2022/10/23 15:00:29 UTC
+Table: 'Floride' 6-max (real money) Seat #6 is the button
+Seat 1: Stun72 (11.14€)
+Seat 2: Calamarcilla (3.48€)
+Seat 3: TMCH (2.52€)
+Seat 4: Breaking-bet (11.14€)
+Seat 5: german450 (4.41€)
+Seat 6: DesChipsSvp (2.70€)
+*** ANTE/BLINDS ***
+Stun72 posts small blind 0.05€
+Calamarcilla posts big blind 0.10€
+Dealt to DesChipsSvp [2h 6s]
+*** PRE-FLOP ***
+TMCH folds
+Breaking-bet folds
+german450 folds
+DesChipsSvp raises 0.12€ to 0.22€
+Stun72 folds
+Calamarcilla calls 0.12€
+*** FLOP *** [Kc 5c Kd]
+Calamarcilla checks
+DesChipsSvp bets 0.12€
+Calamarcilla raises 0.18€ to 0.30€
+DesChipsSvp folds
+Calamarcilla collected 0.84€ from pot
+*** SUMMARY ***
+Total pot 0.84€ | Rake 0.07€
+Board: [Kc 5c Kd]
+Seat 2: Calamarcilla (big blind) won 0.84€

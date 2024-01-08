@@ -1,0 +1,536 @@
+Winamax Poker - Go Fast "Floride" - HandId: #17338644-4049380-1658761263 - Holdem no limit (0.05€/0.10€) - 2022/07/25 15:01:03 UTC
+Table: 'Floride' 6-max (real money) Seat #6 is the button
+Seat 1: Oursapwal (10.79€)
+Seat 2: GibGibGib (2.35€)
+Seat 3: kylianOM13 (16.58€)
+Seat 4: Daverun (9.26€)
+Seat 5: P3ck-oSS (10€)
+Seat 6: 1rhumm1 (6.37€)
+*** ANTE/BLINDS ***
+Oursapwal posts small blind 0.05€
+GibGibGib posts big blind 0.10€
+Dealt to GibGibGib [Tc Td]
+*** PRE-FLOP *** 
+kylianOM13 folds
+Daverun folds
+P3ck-oSS folds
+1rhumm1 folds
+Oursapwal folds
+GibGibGib collected 0.15€ from pot
+*** SUMMARY ***
+Total pot 0.15€ | No rake
+Seat 2: GibGibGib (big blind) won 0.15€
+
+
+Winamax Poker - Go Fast "Floride" - HandId: #17338644-4050527-1658761944 - Holdem no limit (0.05€/0.10€) - 2022/07/25 15:12:24 UTC
+Table: 'Floride' 6-max (real money) Seat #6 is the button
+Seat 1: plomplom3 (22.09€)
+Seat 2: madinina007 (18€)
+Seat 3: GibGibGib (2€)
+Seat 4: Fredonuoto (2.92€)
+Seat 5: Drikfish (10.76€)
+Seat 6: kylianOM13 (23.49€)
+Hold-up to Pot: total 0.50€
+*** ANTE/BLINDS ***
+plomplom3 posts small blind 0.05€
+madinina007 posts big blind 0.10€
+Dealt to GibGibGib [Qd 8d]
+*** PRE-FLOP *** 
+GibGibGib raises 1.90€ to 2€ and is all-in
+Fredonuoto folds
+Drikfish folds
+kylianOM13 folds
+plomplom3 folds
+madinina007 folds
+GibGibGib collected 2.65€ from pot
+*** SUMMARY ***
+Total pot 2.65€ | No rake
+Seat 3: GibGibGib won 2.65€
+
+
+Winamax Poker - Go Fast "Floride" - HandId: #17338644-4076413-1658776057 - Holdem no limit (0.05€/0.10€) - 2022/07/25 19:07:37 UTC
+Table: 'Floride' 6-max (real money) Seat #6 is the button
+Seat 1: vitch777 (17.41€)
+Seat 2: G105 (53.86€)
+Seat 3: RIZCHOU (10.76€)
+Seat 4: FvckUpayMe (3.28€)
+Seat 5: TsAr_IvAn (13.97€)
+Seat 6: GibGibGib (2.35€)
+*** ANTE/BLINDS ***
+vitch777 posts small blind 0.05€
+G105 posts big blind 0.10€
+Dealt to GibGibGib [Ah Qc]
+*** PRE-FLOP *** 
+RIZCHOU folds
+FvckUpayMe folds
+TsAr_IvAn folds
+GibGibGib raises 0.15€ to 0.25€
+vitch777 folds
+G105 raises 0.50€ to 0.75€
+GibGibGib raises 1.60€ to 2.35€ and is all-in
+G105 calls 1.60€
+*** FLOP *** [9c Js Ad]
+*** TURN *** [9c Js Ad][5d]
+*** RIVER *** [9c Js Ad 5d][Jh]
+*** SHOW DOWN ***
+G105 shows [Qh Qd] (Two pairs : Queens and Jacks)
+GibGibGib shows [Ah Qc] (Two pairs : Aces and Jacks)
+GibGibGib collected 4.27€ from pot
+*** SUMMARY ***
+Total pot 4.27€ | Rake 0.48€
+Board: [9c Js Ad 5d Jh]
+Seat 2: G105 (big blind) showed [Qh Qd] and lost with Two pairs : Queens and Jacks
+Seat 6: GibGibGib (button) showed [Ah Qc] and won 4.27€ with Two pairs : Aces and Jacks
+
+
+Winamax Poker - Go Fast "Floride" - HandId: #17464639-305951-1659182914 - Holdem no limit (0.05€/0.10€) - 2022/07/30 12:08:34 UTC
+Table: 'Floride' 6-max (real money) Seat #6 is the button
+Seat 1: GibGibGib (4.32€)
+Seat 2: Elise567 (10€)
+Seat 3: MogzyBougues (20.30€)
+Seat 4: quimico87 (10€)
+Seat 5: kalouuu (20.70€)
+Seat 6: SkylerWhite (5.03€)
+Hold-up to Pot: total 2.50€
+*** ANTE/BLINDS ***
+GibGibGib posts small blind 0.05€
+Elise567 posts big blind 0.10€
+Dealt to GibGibGib [8s As]
+*** PRE-FLOP ***
+MogzyBougues folds
+quimico87 folds
+kalouuu calls 0.10€
+SkylerWhite calls 0.10€
+GibGibGib raises 4.22€ to 4.32€ and is all-in
+Elise567 raises 4.22€ to 8.54€
+kalouuu folds
+SkylerWhite folds
+*** FLOP *** [Qs Qc 3h]
+*** TURN *** [Qs Qc 3h][Qh]
+*** RIVER *** [Qs Qc 3h Qh][2d]
+*** SHOW DOWN ***
+GibGibGib shows [8s As] (Trips of Queens)
+Elise567 shows [Tc 7h] (Trips of Queens)
+Elise567 collected 4.22€ from side pot 1
+GibGibGib collected 10.46€ from main pot
+*** SUMMARY ***
+Total pot 14.68€ | Rake 0.88€
+Board: [Qs Qc 3h Qh 2d]
+Seat 1: GibGibGib (small blind) showed [8s As] and won 10.46€ with Trips of Queens
+Seat 2: Elise567 (big blind) showed [Tc 7h] and won 4.22€ with Trips of Queens
+
+
+Winamax Poker - Go Fast "Colorado" - HandId: #17194928-480529-1651407831 - Holdem no limit (0.01€/0.02€) - 2022/05/01 12:23:51 UTC
+Table: 'Colorado' 6-max (real money) Seat #6 is the button
+Seat 1: Hyuga_Kojiro (2.06€)
+Seat 2: VeKrAm (2.05€)
+Seat 3: quimico87 (2€)
+Seat 4: Jonicojo (4.08€)
+Seat 5: Snootyfox1 (4.28€)
+Seat 6: GibGibGib (0.53€)
+*** ANTE/BLINDS ***
+Hyuga_Kojiro posts small blind 0.01€
+VeKrAm posts big blind 0.02€
+Dealt to GibGibGib [Ah Qd]
+*** PRE-FLOP ***
+quimico87 folds
+Jonicojo folds
+Snootyfox1 folds
+GibGibGib raises 0.03€ to 0.05€
+Hyuga_Kojiro folds
+VeKrAm calls 0.03€
+*** FLOP *** [As 9d Jc]
+VeKrAm checks
+GibGibGib bets 0.08€
+VeKrAm calls 0.08€
+*** TURN *** [As 9d Jc][Ad]
+VeKrAm checks
+GibGibGib bets 0.40€ and is all-in
+VeKrAm calls 0.40€
+*** RIVER *** [As 9d Jc Ad][Jh]
+*** SHOW DOWN ***
+VeKrAm shows [Ac 2c] (Full of Aces and Jacks)
+GibGibGib shows [Ah Qd] (Full of Aces and Jacks)
+GibGibGib collected 0.48€ from pot
+VeKrAm collected 0.48€ from pot
+*** SUMMARY ***
+Total pot 0.96€ | Rake 0.11€
+Board: [As 9d Jc Ad Jh]
+Seat 2: VeKrAm (big blind) showed [Ac 2c] and won 0.48€ with Full of Aces and Jacks
+Seat 6: GibGibGib (button) showed [Ah Qd] and won 0.48€ with Full of Aces and Jacks
+
+
+Winamax Poker - Go Fast "Colorado" - HandId: #17259194-2364102-1654473541 - Holdem no limit (0.01€/0.02€) - 2022/06/05 23:59:01 UTC
+Table: 'Colorado' 6-max (real money) Seat #6 is the button
+Seat 1: Ninina83 (2.30€)
+Seat 2: THeGriNchh (12.24€)
+Seat 3: Rialot (1.78€)
+Seat 4: Picsoudu67 (3.37€)
+Seat 5: GibGibGib (0.42€)
+Seat 6: Adlayak (0.53€)
+Hold-up to Pot: total 0.10€
+*** ANTE/BLINDS ***
+Ninina83 posts small blind 0.01€
+THeGriNchh posts big blind 0.02€
+Dealt to GibGibGib [Td 3h]
+*** PRE-FLOP ***
+Rialot folds
+Picsoudu67 folds
+GibGibGib raises 0.06€ to 0.08€
+Adlayak calls 0.08€
+Ninina83 calls 0.07€
+THeGriNchh folds
+*** FLOP *** [5d Ah 2c]
+Ninina83 checks
+GibGibGib bets 0.07€
+Adlayak folds
+Ninina83 calls 0.07€
+*** TURN *** [5d Ah 2c][Qc]
+Ninina83 checks
+GibGibGib checks
+*** RIVER *** [5d Ah 2c Qc][4c]
+Ninina83 bets 0.33€
+GibGibGib calls 0.27€ and is all-in
+*** SHOW DOWN ***
+Ninina83 shows [Jh 3c] (Straight 5 high)
+GibGibGib shows [Td 3h] (Straight 5 high)
+GibGibGib collected 0.48€ from main pot
+Ninina83 collected 0.53€ from side pot 1
+*** SUMMARY ***
+Total pot 1.01€ | Rake 0.09€
+Board: [5d Ah 2c Qc 4c]
+Seat 1: Ninina83 (small blind) showed [Jh 3c] and won 0.53€ with Straight 5 high
+Seat 5: GibGibGib showed [Td 3h] and won 0.48€ with Straight 5 high
+
+
+Winamax Poker - Go Fast "Floride" - HandId: #17464639-246880-1659123145 - Holdem no limit (0.05€/0.10€) - 2022/07/29 19:32:25 UTC
+Table: 'Floride' 6-max (real money) Seat #6 is the button
+Seat 1: GibGibGib (2.40€)
+Seat 2: NUNUSS69 (18.84€)
+Seat 3: HowCanIHelp (10.07€)
+Seat 4: totinho (10€)
+Seat 5: GAVI_ARNm (10.49€)
+Seat 6: Pins34500 (2.85€)
+*** ANTE/BLINDS ***
+GibGibGib posts small blind 0.05€
+NUNUSS69 posts big blind 0.10€
+Dealt to GibGibGib [Ks 7s]
+*** PRE-FLOP *** 
+HowCanIHelp folds
+totinho folds
+GAVI_ARNm folds
+Pins34500 calls 0.10€
+GibGibGib raises 0.35€ to 0.45€
+NUNUSS69 folds
+Pins34500 calls 0.35€
+*** FLOP *** [Kh 7d 2s]
+GibGibGib bets 0.25€
+Pins34500 calls 0.25€
+*** TURN *** [Kh 7d 2s][9c]
+GibGibGib bets 0.55€
+Pins34500 raises 1.60€ to 2.15€ and is all-in
+GibGibGib calls 1.15€ and is all-in
+*** RIVER *** [Kh 7d 2s 9c][7c]
+*** SHOW DOWN ***
+GibGibGib shows [Ks 7s] (Full of 7 and Kings)
+Pins34500 shows [9s Jc] (Two pairs : 9 and 7)
+Pins34500 collected 0.45€ from side pot 1
+GibGibGib collected 4.41€ from main pot
+*** SUMMARY ***
+Total pot 4.86€ | Rake 0.49€
+Board: [Kh 7d 2s 9c 7c]
+Seat 1: GibGibGib (small blind) showed [Ks 7s] and won 4.41€ with Full of 7 and Kings
+Seat 6: Pins34500 (button) showed [9s Jc] and won 0.45€ with Two pairs : 9 and 7
+
+
+Winamax Poker - Go Fast "Floride" - HandId: #17497931-484441-1660161499 - Holdem no limit (0.05€/0.10€) - 2022/08/10 19:58:19 UTC
+Table: 'Floride' 6-max (real money) Seat #6 is the button
+Seat 1: DUPS76 (8.92€)
+Seat 2: GibGibGib (3.38€)
+Seat 3: Veracocha (15.99€)
+Seat 4: bgtoky39 (23.82€)
+Seat 5: cactus49 (2.85€)
+Seat 6: Et merde.. (10.38€)
+Hold-up to Pot: total 0.50€
+*** ANTE/BLINDS ***
+DUPS76 posts small blind 0.05€
+GibGibGib posts big blind 0.10€
+Dealt to GibGibGib [4s Jd]
+*** PRE-FLOP ***
+Veracocha folds
+bgtoky39 folds
+cactus49 calls 0.10€
+Et merde.. raises 0.85€ to 0.95€
+DUPS76 calls 0.90€
+GibGibGib folds
+cactus49 folds
+*** FLOP *** [2c 5h 8h]
+DUPS76 bets 0.91€
+Et merde.. calls 0.91€
+*** TURN *** [2c 5h 8h][2s]
+DUPS76 bets 7.06€ and is all-in
+Et merde.. calls 7.06€
+*** RIVER *** [2c 5h 8h 2s][Ks]
+*** SHOW DOWN ***
+DUPS76 shows [2h 9d] (Trips of 2)
+Et merde.. shows [Kc Kh] (Full of Kings and 2)
+Et merde.. collected 16.74€ from pot
+*** SUMMARY ***
+Total pot 16.74€ | Rake 1.80€
+Board: [2c 5h 8h 2s Ks]
+Seat 1: DUPS76 (small blind) showed [2h 9d] and lost with Trips of 2
+Seat 6: Et merde.. (button) showed [Kc Kh] and won 16.74€ with Full of Kings and 2
+
+
+Winamax Poker - Go Fast "Floride" - HandId: #17464639-848682-1659654330 - Holdem no limit (0.05€/0.10€) - 2022/08/04 23:05:30 UTC
+Table: 'Floride' 6-max (real money) Seat #6 is the button
+Seat 1: Juanmi viano (13.06€)
+Seat 2: barronTigre4 (14.62€)
+Seat 3: JuanferAA (10.85€)
+Seat 4: Kawhii8 (7.01€)
+Seat 5: Ap9133 (10€)
+Seat 6: GibGibGib (1.14€)
+Hold-up to Pot: total 0.50€
+*** ANTE/BLINDS ***
+Juanmi viano posts small blind 0.05€
+barronTigre4 posts big blind 0.10€
+Dealt to GibGibGib [Qh Qd]
+*** PRE-FLOP ***
+JuanferAA folds
+Kawhii8 calls 0.10€
+Ap9133 folds
+GibGibGib raises 0.40€ to 0.50€
+Juanmi viano folds
+barronTigre4 folds
+Kawhii8 calls 0.40€
+*** FLOP *** [9d 6s Td]
+Kawhii8 checks
+GibGibGib bets 0.64€ and is all-in
+Kawhii8 calls 0.64€
+*** TURN *** [9d 6s Td][2d]
+*** RIVER *** [9d 6s Td 2d][3c]
+*** SHOW DOWN ***
+Kawhii8 shows [Ks 8c] (High card : King)
+GibGibGib shows [Qh Qd] (One pair : Queens)
+GibGibGib collected 2.69€ from pot
+*** SUMMARY ***
+Total pot 2.69€ | Rake 0.24€
+Board: [9d 6s Td 2d 3c]
+Seat 4: Kawhii8 showed [Ks 8c] and lost with High card : King
+Seat 6: GibGibGib (button) showed [Qh Qd] and won 2.69€ with One pair : Queens
+
+
+Winamax Poker - Go Fast "Floride" - HandId: #17497931-28056-1659798272 - Holdem no limit (0.05€/0.10€) - 2022/08/06 15:04:32 UTC
+Table: 'Floride' 6-max (real money) Seat #6 is the button
+Seat 1: background (6.54€)
+Seat 2: GibGibGib (0.10€)
+Seat 3: dynamick7 (22.13€)
+Seat 4: mel20-81 (9.84€)
+Seat 5: Sac2Frite (3.59€)
+Seat 6: lumaraf (3.04€)
+*** ANTE/BLINDS ***
+background posts small blind 0.05€
+GibGibGib posts big blind 0.10€ and is all-in
+Dealt to GibGibGib [6h Ks]
+*** PRE-FLOP ***
+dynamick7 folds
+mel20-81 folds
+Sac2Frite raises 0.15€ to 0.25€
+lumaraf folds
+background calls 0.20€
+*** FLOP *** [Kd 3d 9c]
+background checks
+Sac2Frite bets 0.39€
+background calls 0.39€
+*** TURN *** [Kd 3d 9c][5h]
+background checks
+Sac2Frite checks
+*** RIVER *** [Kd 3d 9c 5h][6c]
+background bets 0.70€
+Sac2Frite folds
+*** SHOW DOWN ***
+background shows [Ah 9h] (One pair : 9)
+GibGibGib shows [6h Ks] (Two pairs : Kings and 6)
+GibGibGib collected 0.27€ from main pot
+background collected 1.67€ from side pot 1
+*** SUMMARY ***
+Total pot 1.94€ | Rake 0.14€
+Board: [Kd 3d 9c 5h 6c]
+Seat 1: background (small blind) showed [Ah 9h] and won 1.67€ with One pair : 9
+Seat 2: GibGibGib (big blind) showed [6h Ks] and won 0.27€ with Two pairs : Kings and 6
+
+Winamax Poker - Go Fast "Floride" - HandId: #17744560-312114-1666537229 - Holdem no limit (0.05€/0.10€) - 2022/10/23 15:00:29 UTC
+Table: 'Floride' 6-max (real money) Seat #6 is the button
+Seat 1: Stun72 (11.14€)
+Seat 2: Calamarcilla (3.48€)
+Seat 3: TMCH (2.52€)
+Seat 4: Breaking-bet (11.14€)
+Seat 5: german450 (4.41€)
+Seat 6: DesChipsSvp (2.70€)
+*** ANTE/BLINDS ***
+Stun72 posts small blind 0.05€
+Calamarcilla posts big blind 0.10€
+Dealt to DesChipsSvp [2h 6s]
+*** PRE-FLOP *** 
+TMCH folds
+Breaking-bet folds
+german450 folds
+DesChipsSvp raises 0.12€ to 0.22€
+Stun72 folds
+Calamarcilla calls 0.12€
+*** FLOP *** [Kc 5c Kd]
+Calamarcilla checks
+DesChipsSvp bets 0.12€
+Calamarcilla raises 0.18€ to 0.30€
+DesChipsSvp folds
+Calamarcilla collected 0.84€ from pot
+*** SUMMARY ***
+Total pot 0.84€ | Rake 0.07€
+Board: [Kc 5c Kd]
+Seat 2: Calamarcilla (big blind) won 0.84€
+
+
+
+
+Winamax Poker - Go Fast "Floride" - HandId: #17497931-4318029-1663442411 - Holdem no limit (0.05€/0.10€) - 2022/09/17 19:20:11 UTC
+Table: 'Floride' 6-max (real money) Seat #6 is the button
+Seat 1: aurel180592 (10.24€)
+Seat 2: faberwtit38 (10.38€)
+Seat 3: Crapuleeeeuh (5.85€)
+Seat 4: GrgekGrue (19.01€)
+Seat 5: GibGibGib (4.82€)
+Seat 6: RmBMbAmYnAmE (30.53€)
+Hold-up to Pot: total 1€
+*** ANTE/BLINDS ***
+aurel180592 posts small blind 0.05€
+faberwtit38 posts big blind 0.10€
+Dealt to GibGibGib [Ah Jh]
+*** PRE-FLOP ***
+Crapuleeeeuh folds
+GrgekGrue folds
+GibGibGib raises 4.72€ to 4.82€ and is all-in
+RmBMbAmYnAmE folds
+aurel180592 raises 4.72€ to 9.54€
+faberwtit38 folds
+*** FLOP *** [Jd Ts 7h]
+*** TURN *** [Jd Ts 7h][5c]
+*** RIVER *** [Jd Ts 7h 5c][4h]
+*** SHOW DOWN ***
+aurel180592 shows [Js As] (One pair : Jacks)
+GibGibGib shows [Ah Jh] (One pair : Jacks)
+GibGibGib collected 4.89€ from main pot
+aurel180592 collected 9.60€ from side pot 1
+*** SUMMARY ***
+Total pot 14.49€ | Rake 0.97€
+Board: [Jd Ts 7h 5c 4h]
+Seat 1: aurel180592 (small blind) showed [Js As] and won 9.60€ with One pair : Jacks
+Seat 5: GibGibGib showed [Ah Jh] and won 4.89€ with One pair : Jacks
+
+
+Winamax Poker - Go Fast "Floride" - HandId: #17744560-913853-1667142813 - Holdem no limit (0.05€/0.10€) - 2022/10/30 15:13:33 UTC
+Table: 'Floride' 6-max (real money) Seat #6 is the button
+Seat 1: xDr.Low (2.12€)
+Seat 2: DesChipsSvp (2.38€)
+Seat 3: You.are.dead (15.31€)
+Seat 4: ramz64 (1.91€)
+Seat 5: ichoue (2.41€)
+Seat 6: lechicoteur (37.43€)
+Hold-up to Pot: total 1€
+*** ANTE/BLINDS ***
+xDr.Low posts small blind 0.05€
+DesChipsSvp posts big blind 0.10€
+Dealt to DesChipsSvp [8c 9c]
+*** PRE-FLOP ***
+You.are.dead raises 0.20€ to 0.30€
+ramz64 calls 0.30€
+ichoue calls 0.30€
+lechicoteur folds
+xDr.Low folds
+DesChipsSvp raises 2.08€ to 2.38€ and is all-in
+You.are.dead folds
+ramz64 calls 1.61€ and is all-in
+ichoue folds
+*** FLOP *** [2d 6c 7s]
+*** TURN *** [2d 6c 7s][Ts]
+*** RIVER *** [2d 6c 7s Ts][Jc]
+*** SHOW DOWN ***
+ramz64 shows [6d Jd] (Two pairs : Jacks and 6)
+DesChipsSvp shows [8c 9c] (Straight Jack high)
+DesChipsSvp collected 5.49€ from pot
+*** SUMMARY ***
+Total pot 5.49€ | Rake 0.45€
+Board: [2d 6c 7s Ts Jc]
+Seat 2: DesChipsSvp (big blind) showed [8c 9c] and won 5.49€ with Straight Jack high
+Seat 4: ramz64 showed [6d Jd] and lost with Two pairs : Jacks and 6
+
+
+Winamax Poker - Go Fast "Floride" - HandId: #17338644-2952881-1657660787 - Holdem no limit (0.05€/0.10€) - 2022/07/12 21:19:47 UTC
+Table: 'Floride' 6-max (real money) Seat #6 is the button
+Seat 1: Alejandro475 (14.20€)
+Seat 2: l1dsi (8.10€)
+Seat 3: pokerbugs27 (4.54€)
+Seat 4: LeRhumDuneVi (27.45€)
+Seat 5: GibGibGib (2.15€)
+Seat 6: JuanferAA (10€)
+*** ANTE/BLINDS ***
+Alejandro475 posts small blind 0.05€
+l1dsi posts big blind 0.10€
+Dealt to GibGibGib [9h 6h]
+*** PRE-FLOP ***
+pokerbugs27 folds
+LeRhumDuneVi folds
+GibGibGib raises 0.15€ to 0.25€
+JuanferAA folds
+Alejandro475 calls 0.20€
+l1dsi calls 0.15€
+*** FLOP *** [9d Qh 6s]
+Alejandro475 bets 0.91€
+l1dsi folds
+GibGibGib raises 0.99€ to 1.90€ and is all-in
+Alejandro475 calls 0.99€
+*** TURN *** [9d Qh 6s][3h]
+*** RIVER *** [9d Qh 6s 3h][7h]
+*** SHOW DOWN ***
+Alejandro475 shows [4c Qc] (One pair : Queens)
+GibGibGib shows [9h 6h] (Flush Queen high)
+GibGibGib collected 4.09€ from pot
+*** SUMMARY ***
+Total pot 4.09€ | Rake 0.46€
+Board: [9d Qh 6s 3h 7h]
+Seat 1: Alejandro475 (small blind) showed [4c Qc] and lost with One pair : Queens
+Seat 5: GibGibGib showed [9h 6h] and won 4.09€ with Flush Queen high
+
+
+Winamax Poker - HOLD-UP "Floride" - HandId: #18352826-2009726-1682763846 - Holdem no limit (0.05€/0.10€) - 2023/04/29 10:24:06 UTC
+Table: 'Floride' 6-max (real money) Seat #6 is the button
+Seat 1: 11i09i77 (10.20€)
+Seat 2: LoRdFloWer (37.31€)
+Seat 3: CA_Specimen9 (22.74€)
+Seat 4: Kasin (6.25€)
+Seat 5: aa2812 (2.97€)
+Seat 6: wmx-lc59s0c (2.74€)
+Hold-up to Pot: total 0.50€
+*** ANTE/BLINDS ***
+11i09i77 posts small blind 0.05€
+LoRdFloWer posts big blind 0.10€
+Dealt to wmx-lc59s0c [Qh 4h]
+*** PRE-FLOP ***
+CA_Specimen9 raises 0.20€ to 0.30€
+Kasin calls 0.30€
+aa2812 folds
+wmx-lc59s0c calls 0.30€
+11i09i77 calls 0.25€
+LoRdFloWer calls 0.20€
+*** FLOP *** [Jd 4s Ts]
+11i09i77 checks
+LoRdFloWer checks
+CA_Specimen9 bets 1.30€
+Kasin folds
+wmx-lc59s0c folds
+11i09i77 folds
+LoRdFloWer folds
+CA_Specimen9 collected 3.15€ from pot
+*** SUMMARY ***
+Total pot 3.15€ | Rake 0.15€
+Board: [Jd 4s Ts]
+Seat 3: CA_Specimen9 won 3.15€

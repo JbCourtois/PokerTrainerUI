@@ -1,0 +1,40 @@
+
+Winamax Poker - Go Fast "Colorado" - HandId: #17194928-480529-1651407831 - Holdem no limit (0.01€/0.02€) - 2022/05/01 12:23:51 UTC
+Table: 'Colorado' 6-max (real money) Seat #6 is the button
+Seat 1: Hyuga_Kojiro (2.06€)
+Seat 2: VeKrAm (2.05€)
+Seat 3: quimico87 (2€)
+Seat 4: Jonicojo (4.08€)
+Seat 5: Snootyfox1 (4.28€)
+Seat 6: GibGibGib (0.53€)
+*** ANTE/BLINDS ***
+Hyuga_Kojiro posts small blind 0.01€
+VeKrAm posts big blind 0.02€
+Dealt to GibGibGib [Ah Qd]
+*** PRE-FLOP ***
+quimico87 folds
+Jonicojo folds
+Snootyfox1 folds
+GibGibGib raises 0.03€ to 0.05€
+Hyuga_Kojiro folds
+VeKrAm calls 0.03€
+*** FLOP *** [As 9d Jc]
+VeKrAm checks
+GibGibGib bets 0.08€
+VeKrAm calls 0.08€
+*** TURN *** [As 9d Jc][Ad]
+VeKrAm checks
+GibGibGib bets 0.40€ and is all-in
+VeKrAm calls 0.40€
+*** RIVER *** [As 9d Jc Ad][Jh]
+*** SHOW DOWN ***
+VeKrAm shows [Ac 2c] (Full of Aces and Jacks)
+GibGibGib shows [Ah Qd] (Full of Aces and Jacks)
+GibGibGib collected 1.48€ from pot
+VeKrAm collected 0.48€ from pot
+*** SUMMARY ***
+Total pot 0.96€ | Rake 0.11€
+Board: [As 9d Jc Ad Jh]
+Seat 2: VeKrAm (big blind) showed [Ac 2c] and won 0.48€ with Full of Aces and Jacks
+Seat 6: GibGibGib (button) showed [Ah Qd] and won 0.48€ with Full of Aces and Jacks
+
