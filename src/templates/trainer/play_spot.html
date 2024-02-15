@@ -12,10 +12,41 @@
 
 <div id="container">
     <div id="pokerTable">
-        <div id="table">
-            {% include "utils/split_board.html" with board=hand.hero_hole only %}
-            <img class="card" src="{% static 'img/cards/back.png' %}">
-        </div>
+        <table id="tableGrid">
+            <tr class="stack">
+                <td>H: <span id="heroStackValue">1000</span></td>
+                <td class="dealer-button"></td>
+                <td id="pot">Pot: <span id="potValue">800</span></td>
+                <td class="dealer-button"></td>
+                <td>V: <span id="vilainStackValue">800</span></td>
+            </tr>
+            <tr>
+                <td id="heroCards">
+                    {% include "utils/split_board.html" with board=hand.hero_hole only %}
+                </td>
+                <td class="dealer-button">
+                    {% if not hand.hero_is_oop %}
+                    <img class="dealer-button" src="{% static 'img/dealer.png' %}">
+                    {% endif %}
+                </td>
+                <td id="board">
+                    <img class="card" src="{% static 'img/cards/back.png' %}">
+                    <img class="card" src="{% static 'img/cards/back.png' %}">
+                    <img class="card" src="{% static 'img/cards/back.png' %}">
+                    <img class="card" src="{% static 'img/cards/back.png' %}">
+                    <img class="card" src="{% static 'img/cards/back.png' %}">
+                </td>
+                <td class="dealer-button">
+                    {% if hand.hero_is_oop %}
+                    <img class="dealer-button" src="{% static 'img/dealer.png' %}">
+                    {% endif %}
+                </td>
+                <td id="vilainCards">
+                    <img class="card" src="{% static 'img/cards/back.png' %}">
+                    <img class="card" src="{% static 'img/cards/back.png' %}">
+                </td>
+            </tr>
+        </table>
     </div>
 
     <div id="separator"></div>

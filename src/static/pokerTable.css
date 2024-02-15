@@ -1,27 +1,57 @@
 #pokerTable {
     width: 60%;
-    height: 100px;
+    height: 150px;
     display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: #007200;
     border: 10px solid #4d2600;
     padding: 20px;
     border-radius: 20px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+
+    color: white;
+    font-size: 15px;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
 }
 
-#separator {
-    width: 2px;
-    background-color: #4d2600;
-    margin: 20px;
+#tableGrid {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#tableGrid td {
+    padding: 10px;
+    text-align: center;
+}
+
+.card {
+    width: 48px;
+    height: 76px;
+}
+
+img.dealer-button {
+    width: 40px;
+    height: 40px;
+}
+
+.stack {
+    white-space: nowrap;
+    font-size: 25px;
+    color: white;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
 }
 
 #container {
     display: flex;
 }
 
-.card {
-    width: 48px;
-    height: 76px;
+#separator {
+    width: 2px;
+    background-color: #4d2600;
+    margin: 20px;
 }
 
 #actionLog {
