@@ -18,4 +18,4 @@ def play_spot(request, spot_id):
         'spot': hand.spot,
         'hand': hand,
     }
-    return render(request, 'play_spot.html', context)
+    return render(request, 'trainer/play_spot.html', context)

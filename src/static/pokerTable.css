@@ -1,0 +1,16 @@
+#pokerTable {
+    width: 75%;
+    display: flex;
+    background-color: #007200;
+    border: 10px solid #4d2600;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+#container {
+    display: flex;
+}
+.card {
+    width: 48px;
+    height: 76px;
+}

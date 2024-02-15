@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Trainer{% endblock %}
+
+
+{% block body %}
+
+{{ hand.tree|json_script:"gameTree" }}
+<script>const gameTree = JSON.parse(document.getElementById('gameTree').textContent);</script>
+
+<p><script>document.write(JSON.stringify(gameTree))</script></p>
+
+<div id="container">
+    <div id="pokerTable">
+        <div id="table">
+            {% include "utils/split_board.html" with board=hand.hero_hole only %}
+            <img class="card" src="{% static 'img/cards/back.png' %}">
+        </div>
+    </div>
+
+    <div id="actionLog">
+        Test
+    </div>
+</div>
+
+<script>
+    // Code here
+</script>
+
+{% endblock %}

@@ -21,11 +21,7 @@
         {% for spot in object_list %}
             <tr>
                 <td>{{ spot.name }}</td>
-                <td>
-                    {% for card in spot.board|slice:"::2" %}
-                        <img src="{% static 'images/'|add:card|add:'.png' %}" alt="{{ card }}">
-                    {% endfor %}
-                </td>
+                <td>{% include "utils/split_board.html" with board=spot.board only %}</td>
                 <td>{{ spot.pot }}</td>
                 <td>{{ spot.stack }}</td>
                 <td>

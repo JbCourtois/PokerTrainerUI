@@ -3,6 +3,7 @@
 <html lang="en">
 	<head>
 		<link rel="icon" href="{% static "img/favicon.ico" %}" />
+		<link rel="stylesheet" href="{% static "pokerTable.css" %}">
 		<title>{% block title %}Poker tools{% endblock %}</title>
 		<!-- Required meta tags -->
 		<meta charset="utf-8">
@@ -78,7 +79,7 @@
 		</style>
 	</head>
 	<body>
-		<img src="{% static "img/banner.jpg" %}" width="100%" height="300">
+		<div><img src="{% static "img/banner.jpg" %}" width="100%" height="300"></div>
 
 		{% block body %}{% endblock %}
 	</body>
