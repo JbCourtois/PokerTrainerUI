@@ -1,5 +1,6 @@
 #pokerTable {
-    width: 75%;
+    width: 60%;
+    height: 100px;
     display: flex;
     background-color: #007200;
     border: 10px solid #4d2600;
@@ -7,10 +8,27 @@
     border-radius: 20px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
+
+#separator {
+    width: 2px;
+    background-color: #4d2600;
+    margin: 20px;
+}
+
 #container {
     display: flex;
 }
+
 .card {
     width: 48px;
     height: 76px;
+}
+
+#actionLog {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }

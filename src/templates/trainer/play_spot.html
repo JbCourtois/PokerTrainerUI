@@ -3,7 +3,6 @@
 
 {% block title %}Trainer{% endblock %}
 
-
 {% block body %}
 
 {{ hand.tree|json_script:"gameTree" }}
@@ -19,13 +18,27 @@
         </div>
     </div>
 
-    <div id="actionLog">
-        Test
-    </div>
+    <div id="separator"></div>
+
+    <div id="actionLog"></div>
 </div>
 
 <script>
-    // Code here
+    const actionLog = document.getElementById('actionLog');
+    const consoleLog = [];
+
+    function updateActionLog(value) {
+        const newLog = `<p>${value}</p>`;
+        consoleLog.push(newLog);
+        actionLog.innerHTML = consoleLog.join('');
+    }
+
+    function popLastLog() {
+        if (consoleLog.length > 0) {
+            consoleLog.pop();
+            actionLog.innerHTML = consoleLog.join('');
+        }
+    }
 </script>
 
 {% endblock %}
