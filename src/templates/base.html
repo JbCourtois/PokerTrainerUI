@@ -78,24 +78,7 @@
 		</style>
 	</head>
 	<body>
-		{# Navigation bar #}
-		<ul class="navbar">
-			<li><a href="/nash">Nash tables</a></li>
-			<li><a href="/ranges">Range VS Hands</a></li>
-			<li><a href="/ranges/matchups">Postflop tools</a></li>
-			<li class="dropdown">
-				<a href="/elo" class="dropbtn">ELO</a>
-				<div class="dropdown-content">
-					<a href="/elo/leaderboard">Leaderboard</a>
-					<a href="/elo/leaderboard/create">Create user 🔒</a>
-					<a href="/elo/tournaments">Tournaments</a>
-					<a href="/elo/tournaments/create">Record tournament 🔒</a>
-					<a href="/elo/tournaments/createcash">Record cash game 🔒</a>
-				</div>
-			</li>
-		</ul>
-
-		<img src="{% static "img/banner.jpg" %}" width="100%" height="200">
+		<img src="{% static "img/banner.jpg" %}" width="100%" height="300">
 
 		{% block body %}{% endblock %}
 	</body>

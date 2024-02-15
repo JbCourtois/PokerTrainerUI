@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Spot List{% endblock %}
+
+{% block body %}
+<h1>Pick a spot</h1>
+
+<div>
+    <table class="data" style="font-size: 20px;">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Board</th>
+                <th>Pot</th>
+                <th>Stack</th>
+                <th>Hero position</th>
+                <th></th>
+            </tr>
+        </thead>
+        {% for spot in object_list %}
+            <tr>
+                <td>{{ spot.name }}</td>
+                <td>
+                    {% for card in spot.board|slice:"::2" %}
+                        <img src="{% static 'images/'|add:card|add:'.png' %}" alt="{{ card }}">
+                    {% endfor %}
+                </td>
+                <td>{{ spot.pot }}</td>
+                <td>{{ spot.stack }}</td>
+                <td>
+                    {% if spot.hero_is_oop is None %}
+                        <select id="hero_position_{{ spot.id }}">
+                            <option value="">Either</option>
+                            <option value="1">OOP</option>
+                            <option value="0">IP</option>
+                        </select>
+                    {% else %}
+                        {{ spot.hero_is_oop | yesno:"OOP,IP" }}
+                    {% endif %}
+                </td>
+                <td>
+                    <button onclick="play('{{ spot.id }}')">Play</button>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+
+<script>
+    function play(spotId) {
+        var dropdown = document.getElementById("hero_position_" + spotId);
+        var selectedValue = dropdown ? dropdown.options[dropdown.selectedIndex].value : "";
+        window.location.href = "spots/play/" + spotId + "?hero_is_oop=" + selectedValue;
+    }
+</script>
+{% endblock %}
