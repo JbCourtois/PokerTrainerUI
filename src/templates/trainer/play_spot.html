@@ -16,48 +16,60 @@
         3: "Turn",
         4: "River",
     }
+
+    const betGradient = ['#FFBDBD', '#FF7B7B', '#FF0000'];
+    const actionColors = {
+        'Fold': '#3CD3FF',
+        'Check': '#7AFF7C',
+        'Call': '#7AFF7C',
+        'Bet': betGradient,
+        'Raise': betGradient,
+        'AllIn': '#DD9CFF',
+    };
 </script>
 
 <p><script>document.write(JSON.stringify(gameTree))</script></p>
 
 <div id="container">
     <div id="leftSide" style="width: 65%;">
-        <div id="pokerTable">
-            <table id="tableGrid">
-                <tr class="stack">
-                    <td>H: <span id="heroStackValue">1000</span></td>
-                    <td class="bet-action" id="heroAction"></td>
-                    <td id="pot">Pot: <span id="potValue">800</span></td>
-                    <td class="bet-action" id="vilainAction"></td>
-                    <td>V: <span id="vilainStackValue">800</span></td>
-                </tr>
-                <tr>
-                    <td id="heroCards">
-                        {% include "utils/split_board.html" with board=hand.hero_hole only %}
-                    </td>
-                    <td class="dealer-button">
-                        {% if not hand.hero_is_oop %}
-                        <img class="dealer-button" src="{% static 'img/dealer.png' %}">
-                        {% endif %}
-                    </td>
-                    <td id="board">
-                        <img class="card boardCard" id="boardCard0" src="{% static 'img/cards/back.png' %}">
-                        <img class="card boardCard" id="boardCard1" src="{% static 'img/cards/back.png' %}">
-                        <img class="card boardCard" id="boardCard2" src="{% static 'img/cards/back.png' %}">
-                        <img class="card boardCard" id="boardCard3" src="{% static 'img/cards/back.png' %}">
-                        <img class="card boardCard" id="boardCard4" src="{% static 'img/cards/back.png' %}">
-                    </td>
-                    <td class="dealer-button">
-                        {% if hand.hero_is_oop %}
-                        <img class="dealer-button" src="{% static 'img/dealer.png' %}">
-                        {% endif %}
-                    </td>
-                    <td id="vilainCards">
-                        <img class="card" src="{% static 'img/cards/back.png' %}">
-                        <img class="card" src="{% static 'img/cards/back.png' %}">
-                    </td>
-                </tr>
-            </table>
+        <div id="pokerTableContainer">
+            <div id="pokerTable">
+                <table id="tableGrid">
+                    <tr class="stack">
+                        <td>H: <span id="heroStackValue">1000</span></td>
+                        <td class="bet-action" id="heroAction"></td>
+                        <td id="pot">Pot: <span id="potValue">800</span></td>
+                        <td class="bet-action" id="vilainAction"></td>
+                        <td>V: <span id="vilainStackValue">800</span></td>
+                    </tr>
+                    <tr>
+                        <td id="heroCards">
+                            {% include "utils/split_board.html" with board=hand.hero_hole only %}
+                        </td>
+                        <td class="dealer-button">
+                            {% if not hand.hero_is_oop %}
+                            <img class="dealer-button" src="{% static 'img/dealer.png' %}">
+                            {% endif %}
+                        </td>
+                        <td id="board">
+                            <img class="card boardCard" id="boardCard0" src="{% static 'img/cards/back.png' %}">
+                            <img class="card boardCard" id="boardCard1" src="{% static 'img/cards/back.png' %}">
+                            <img class="card boardCard" id="boardCard2" src="{% static 'img/cards/back.png' %}">
+                            <img class="card boardCard" id="boardCard3" src="{% static 'img/cards/back.png' %}">
+                            <img class="card boardCard" id="boardCard4" src="{% static 'img/cards/back.png' %}">
+                        </td>
+                        <td class="dealer-button">
+                            {% if hand.hero_is_oop %}
+                            <img class="dealer-button" src="{% static 'img/dealer.png' %}">
+                            {% endif %}
+                        </td>
+                        <td id="vilainCards">
+                            <img class="card" src="{% static 'img/cards/back.png' %}">
+                            <img class="card" src="{% static 'img/cards/back.png' %}">
+                        </td>
+                    </tr>
+                </table>
+            </div>
         </div>
 
         <!-- Decision buttons -->
@@ -135,8 +147,18 @@
         const actionsContainer = document.getElementById('actionButtons');
         actionsContainer.innerHTML = '';
 
+        var betSize = 0;
+
         for (const action in actions) {
-            const button = document.createElement('button');
+            const actionLabel = action.split('(')[0].trim();
+            var color = actionColors[actionLabel];
+            if (color.constructor === Array) {
+                color = color[betSize];
+                betSize++;
+            };
+
+            const button = document.createElement('div');
+            button.style.backgroundColor = color;
             button.textContent = action;
             button.addEventListener('click', () => {heroPlay(action)});
 
