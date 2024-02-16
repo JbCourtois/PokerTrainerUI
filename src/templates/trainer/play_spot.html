@@ -188,7 +188,7 @@
         feedbacks.push(node[1]);
 
         // Build log
-        updateActionLog(`<p>Hero: ${action} <img
+        updateActionLog(`<p><b>Hero:</b> ${action} <img
             id="feedbackIcon${decisionId}"
             class="feedbackIcon"
             src="/static/img/icons/${feedbackLabel}.svg"
@@ -211,7 +211,7 @@
     }
 
     function vilainLog(action) {
-        updateActionLog(`<p>Vilain: ${action}</p>`);
+        updateActionLog(`<p><b>Vilain:</b> ${action}</p>`);
         document.getElementById('vilainAction').innerHTML = action;
         // TODO: update stacks
     }
