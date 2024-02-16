@@ -11,47 +11,57 @@
 <script>
     const gameTree = JSON.parse(document.getElementById('gameTree').textContent);
     const gameBoard = JSON.parse(document.getElementById('gameBoard').textContent);
+    const heroId = 1 - {{ hand.hero_is_oop|add:0 }};
+    const boardLabels = {
+        3: "Turn",
+        4: "River",
+    }
 </script>
 
 <p><script>document.write(JSON.stringify(gameTree))</script></p>
 
 <div id="container">
-    <div id="pokerTable">
-        <table id="tableGrid">
-            <tr class="stack">
-                <td>H: <span id="heroStackValue">1000</span></td>
-                <td class="bet-action" id="heroAction"></td>
-                <td id="pot">Pot: <span id="potValue">800</span></td>
-                <td class="bet-action" id="vilainAction"></td>
-                <td>V: <span id="vilainStackValue">800</span></td>
-            </tr>
-            <tr>
-                <td id="heroCards">
-                    {% include "utils/split_board.html" with board=hand.hero_hole only %}
-                </td>
-                <td class="dealer-button">
-                    {% if not hand.hero_is_oop %}
-                    <img class="dealer-button" src="{% static 'img/dealer.png' %}">
-                    {% endif %}
-                </td>
-                <td id="board">
-                    <img class="card boardCard" id="boardCard0" src="{% static 'img/cards/back.png' %}">
-                    <img class="card boardCard" id="boardCard1" src="{% static 'img/cards/back.png' %}">
-                    <img class="card boardCard" id="boardCard2" src="{% static 'img/cards/back.png' %}">
-                    <img class="card boardCard" id="boardCard3" src="{% static 'img/cards/back.png' %}">
-                    <img class="card boardCard" id="boardCard4" src="{% static 'img/cards/back.png' %}">
-                </td>
-                <td class="dealer-button">
-                    {% if hand.hero_is_oop %}
-                    <img class="dealer-button" src="{% static 'img/dealer.png' %}">
-                    {% endif %}
-                </td>
-                <td id="vilainCards">
-                    <img class="card" src="{% static 'img/cards/back.png' %}">
-                    <img class="card" src="{% static 'img/cards/back.png' %}">
-                </td>
-            </tr>
-        </table>
+    <div id="leftSide" style="width: 65%;">
+        <div id="pokerTable">
+            <table id="tableGrid">
+                <tr class="stack">
+                    <td>H: <span id="heroStackValue">1000</span></td>
+                    <td class="bet-action" id="heroAction"></td>
+                    <td id="pot">Pot: <span id="potValue">800</span></td>
+                    <td class="bet-action" id="vilainAction"></td>
+                    <td>V: <span id="vilainStackValue">800</span></td>
+                </tr>
+                <tr>
+                    <td id="heroCards">
+                        {% include "utils/split_board.html" with board=hand.hero_hole only %}
+                    </td>
+                    <td class="dealer-button">
+                        {% if not hand.hero_is_oop %}
+                        <img class="dealer-button" src="{% static 'img/dealer.png' %}">
+                        {% endif %}
+                    </td>
+                    <td id="board">
+                        <img class="card boardCard" id="boardCard0" src="{% static 'img/cards/back.png' %}">
+                        <img class="card boardCard" id="boardCard1" src="{% static 'img/cards/back.png' %}">
+                        <img class="card boardCard" id="boardCard2" src="{% static 'img/cards/back.png' %}">
+                        <img class="card boardCard" id="boardCard3" src="{% static 'img/cards/back.png' %}">
+                        <img class="card boardCard" id="boardCard4" src="{% static 'img/cards/back.png' %}">
+                    </td>
+                    <td class="dealer-button">
+                        {% if hand.hero_is_oop %}
+                        <img class="dealer-button" src="{% static 'img/dealer.png' %}">
+                        {% endif %}
+                    </td>
+                    <td id="vilainCards">
+                        <img class="card" src="{% static 'img/cards/back.png' %}">
+                        <img class="card" src="{% static 'img/cards/back.png' %}">
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Decision buttons -->
+        <div id="actionButtons"></div>
     </div>
 
     <div id="separator"></div>
@@ -62,7 +72,13 @@
 <script>
     const actionLog = document.getElementById('actionLog');
     const consoleLog = [];
+    var node = gameTree;
     var boardNbCards = 0;
+    const stacks = {
+        "heroStackValue": 0,
+        "vilainStackValue": 0,
+        "potValue": 0,
+    };
 
     function resetHand() {
         consoleLog.length = 0;
@@ -75,16 +91,25 @@
             elem.src = "{% static 'img/cards/back.png' %}";
         });
         gameBoard.forEach(card => {addBoardCard(card);});
+        updateActionLog(`<p><b>—— Board: ${gameBoard.join(' ')} ——</b></p>`);
 
         // Reset stacks
+        resetBets();
+        setStack('heroStackValue', {{ spot.stack }});
+        setStack('vilainStackValue', {{ spot.stack }});
+        setStack('potValue', {{ spot.pot }});
+    }
+
+    function setStack(label, value) {
+        stacks[label] = value;
+        document.getElementById(label).innerHTML = value;
+    }
+
+    function resetBets() {
         const actElements = document.getElementsByClassName("bet-action");
         Array.from(actElements).forEach(elem => {
-            elem.src = "";
+            elem.innerHTML = "";
         });
-        document.getElementById('heroStackValue').innerHTML = {{ spot.stack }};
-        document.getElementById('vilainStackValue').innerHTML = {{ spot.stack }};
-        document.getElementById('potValue').innerHTML = {{ spot.pot }};
-
     }
 
     function addBoardCard(card) {
@@ -106,7 +131,59 @@
         }
     }
 
+    function updateActionButtons(actions) {
+        const actionsContainer = document.getElementById('actionButtons');
+        actionsContainer.innerHTML = '';
+
+        for (const action in actions) {
+            const button = document.createElement('button');
+            button.textContent = action;
+            button.addEventListener('click', () => {heroPlay(action)});
+
+            actionsContainer.appendChild(button);
+        };
+    }
+
+    function heroPlay(action) {
+        updateActionLog(`<p>Hero: ${action}</p>`);
+        document.getElementById('heroAction').innerHTML = action;
+        updateActionButtons();
+        node = node[2][action];
+        runTree()
+    }
+
+    function vilainLog(action) {
+        updateActionLog(`<p>Vilain: ${action}</p>`);
+        document.getElementById('vilainAction').innerHTML = action;
+        // TODO: update stacks
+    }
+
+    function runTree() {
+        if (node == null) return;
+
+        if (node[0] == heroId) {
+            updateActionButtons(node[1]);
+        }
+        else if (node[0] == 1 - heroId) {
+            vilainLog(node[1]);
+            node = node[2];
+            runTree();
+        }
+        else if (node[0] == 2) {
+            resetBets();
+
+            const card = node[1];
+            const label = boardLabels[boardNbCards];
+            updateActionLog(`<p><b>—— ${label}: ${card} ——</b></p>`);
+            addBoardCard(card);
+
+            node = node[2];
+            runTree();
+        }
+    }
+
     resetHand();
+    runTree();
 </script>
 
 {% endblock %}

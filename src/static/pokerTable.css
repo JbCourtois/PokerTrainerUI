@@ -1,5 +1,5 @@
 #pokerTable {
-    width: 60%;
+    width: 75%;
     height: 150px;
     display: flex;
     align-items: center;
@@ -43,6 +43,10 @@ img.dealer-button {
     font-family: 'Courier New', monospace;
     font-weight: bold;
 }
+.bet-action {
+    font-size: 16px;
+    font-style: italic;
+}
 
 #container {
     display: flex;
@@ -61,4 +65,10 @@ img.dealer-button {
     color: white;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+#actionButtons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
 }
