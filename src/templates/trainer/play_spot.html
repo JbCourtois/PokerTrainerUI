@@ -6,6 +6,8 @@
 
 {% block body %}
 
+<h1>{{ spot.name }}</h1>
+
 {{ hand.tree|json_script:"gameTree" }}
 {{ spot.board|split_board|json_script:"gameBoard" }}
 <script>
@@ -27,8 +29,6 @@
         'AllIn': '#DD9CFF',
     };
 </script>
-
-<p><script>document.write(JSON.stringify(gameTree))</script></p>
 
 <div id="container">
     <div id="leftSide" style="width: 65%;">
