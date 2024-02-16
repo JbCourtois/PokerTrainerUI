@@ -91,3 +91,26 @@ img.dealer-button {
     font-family: 'Consolas', monospace;
     font-weight: bold;
 }
+
+/* Feedback icons */
+img.feedbackIcon {
+    display: inline-block;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+#feedbackWindow {
+    display: none;
+    position: absolute;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid black;
+    border-collapse: collapse;
+    border-radius: 10px;
+    text-align: center;
+}
+#feedbackWindow td {
+    border: 1px solid black;
+}

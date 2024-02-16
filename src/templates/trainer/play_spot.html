@@ -81,9 +81,21 @@
     <div id="actionLog"></div>
 </div>
 
+<table id="feedbackWindow">
+    <thead><tr>
+        <th></th>
+        <th>Action</th>
+        <th>Freq</th>
+        <th>EV</th>
+    </tr></thead>
+    <tbody id="feedbackTableBody"></tbody>
+</table>
+
 <script>
     const actionLog = document.getElementById('actionLog');
     const consoleLog = [];
+    const feedbacks = [];
+
     var node = gameTree;
     var boardNbCards = 0;
     const stacks = {
@@ -95,6 +107,9 @@
     function resetHand() {
         consoleLog.length = 0;
         actionLog.innerHTML = '';
+
+        feedbacks.length = 0;
+        hideFeedbackWindow();
 
         // Reset cards
         boardNbCards = 0;
@@ -167,11 +182,32 @@
     }
 
     function heroPlay(action) {
-        updateActionLog(`<p>Hero: ${action}</p>`);
+        // Prepare feedback icon
+        const decisionId = feedbacks.length;
+        const feedbackLabel = getFeedbackLabel(node[1][action][0]);
+        feedbacks.push(node[1]);
+
+        // Build log
+        updateActionLog(`<p>Hero: ${action} <img
+            id="feedbackIcon${decisionId}"
+            class="feedbackIcon"
+            src="/static/img/icons/${feedbackLabel}.svg"
+            onmouseover="showFeedbackWindow(${decisionId})"
+            onmouseout="hideFeedbackWindow()"
+            ></p>`);
         document.getElementById('heroAction').innerHTML = action;
+
+        // Advance in tree
         updateActionButtons();
         node = node[2][action];
-        runTree()
+        runTree();
+    }
+
+    function getFeedbackLabel(frequency) {
+        if (frequency == 1) {return "best"}
+        if (frequency > 0.1) {return "good"}
+        if (frequency > 0) {return "ok"}
+        return "fail";
     }
 
     function vilainLog(action) {
@@ -202,6 +238,38 @@
             node = node[2];
             runTree();
         }
+    }
+
+    function showFeedbackWindow(decisionId) {
+        const feedbackWindow = document.getElementById('feedbackWindow');
+        feedbackWindow.style.display = 'block';
+
+        // Position on screen
+        const icon = document.getElementById(`feedbackIcon${decisionId}`);
+        const iconRect = icon.getBoundingClientRect();
+        const x = iconRect.left + window.scrollX + 30;
+        const y = iconRect.top + window.scrollY - 30;
+        feedbackWindow.style.left = `${x}px`;
+        feedbackWindow.style.top = `${y}px`;
+
+        // Fill table
+        const feedbackTable = document.getElementById('feedbackTableBody');
+        feedbackTable.innerHTML = '';
+        for (const [action, [freq, ev]] of Object.entries(feedbacks[decisionId])) {
+            const row = feedbackTable.insertRow();
+            const label = getFeedbackLabel(freq);
+            row.insertCell(0).innerHTML = `<img
+                class="feedbackIcon"
+                src="/static/img/icons/${label}.svg">`;
+            row.insertCell(1).innerHTML = action;
+            row.insertCell(2).innerHTML = freq;
+            row.insertCell(3).innerHTML = ev;
+        }
+    }
+
+    function hideFeedbackWindow() {
+        const feedbackWindow = document.getElementById('feedbackWindow');
+        feedbackWindow.style.display = 'none';
     }
 
     resetHand();
