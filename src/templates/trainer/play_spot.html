@@ -4,8 +4,9 @@
 
 {% block title %}Trainer{% endblock %}
 
-{% block body %}
+{% block banner %}{% endblock %}
 
+{% block body %}
 <h1>{{ spot.name }}</h1>
 
 {{ hand.tree|json_script:"gameTree" }}
@@ -81,6 +82,12 @@
     <div id="actionLog"></div>
 </div>
 
+<div id="links">
+    <p><a href="#" onclick="resetHand();event.preventDefault();">Replay hand</a></p>
+    <p><a href="">Play another hand in this spot</a></p>
+    <p><a href="/trainer/spots">Back to spots menu</a></p>
+</div>
+
 <table id="feedbackWindow">
     <thead><tr>
         <th></th>
@@ -125,6 +132,10 @@
         setStack('heroStackValue', {{ spot.stack }});
         setStack('vilainStackValue', {{ spot.stack }});
         setStack('potValue', {{ spot.pot }});
+
+        // Go !
+        node = gameTree;
+        runTree();
     }
 
     function setStack(label, value) {
@@ -273,7 +284,6 @@
     }
 
     resetHand();
-    runTree();
 </script>
 
 {% endblock %}
