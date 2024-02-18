@@ -11,6 +11,9 @@
 
 {{ hand.tree|json_script:"gameTree" }}
 {{ spot.board|split_board|json_script:"gameBoard" }}
+
+<script type="text/javascript" src="/static/utils/cards.js"></script>
+
 <script>
     const gameTree = JSON.parse(document.getElementById('gameTree').textContent);
     const gameBoard = JSON.parse(document.getElementById('gameBoard').textContent);
@@ -127,7 +130,8 @@
             elem.src = "{% static 'img/cards/back.png' %}";
         });
         gameBoard.forEach(card => {addBoardCard(card);});
-        updateActionLog(`<p><b>—— Board: ${gameBoard.join(' ')} ——</b></p>`);
+        const formattedBoard = gameBoard.map(card => formatCard(card)).join(' ');
+        updateActionLog(`<p><b>—— Board: ${formattedBoard} ——</b></p>`);
 
         // Reset stacks
         resetBets();
@@ -270,7 +274,7 @@
 
             const card = node[1];
             const label = boardLabels[boardNbCards];
-            updateActionLog(`<p><b>—— ${label}: ${card} ——</b></p>`);
+            updateActionLog(`<p><b>—— ${label}: ${formatCard(card)} ——</b></p>`);
             addBoardCard(card);
 
             node = node[2];
