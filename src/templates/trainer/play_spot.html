@@ -110,6 +110,8 @@
         "vilainStackValue": 0,
         "potValue": 0,
     };
+    var heroBetsize = 0;
+    var vilainBetsize = 0;
 
     function resetHand() {
         consoleLog.length = 0;
@@ -148,6 +150,10 @@
         Array.from(actElements).forEach(elem => {
             elem.innerHTML = "";
         });
+
+        setStack("potValue", stacks.potValue + heroBetsize + vilainBetsize);
+        heroBetsize = 0;
+        vilainBetsize = 0;
     }
 
     function addBoardCard(card) {
@@ -208,6 +214,17 @@
             ></p>`);
         document.getElementById('heroAction').innerHTML = action;
 
+        // Update stack display
+        if (action == "Call") {
+            setStack("heroStackValue", stacks.heroStackValue + heroBetsize - vilainBetsize);
+            heroBetsize = vilainBetsize;
+        }
+        else if (betMatch = action.match(/(\d+)/)) {  // Extract betsize from Bet/Raise/AllIn
+            const betSize = parseInt(betMatch[1]);
+            setStack("heroStackValue", stacks.heroStackValue + heroBetsize - betSize);
+            heroBetsize = betSize;
+        }
+
         // Advance in tree
         updateActionButtons();
         node = node[2][action];
@@ -224,7 +241,17 @@
     function vilainLog(action) {
         updateActionLog(`<p><b>Vilain:</b> ${action}</p>`);
         document.getElementById('vilainAction').innerHTML = action;
-        // TODO: update stacks
+
+        // Update stack display
+        if (action == "Call") {
+            setStack("vilainStackValue", stacks.vilainStackValue + vilainBetsize - heroBetsize);
+            vilainBetsize = heroBetsize;
+        }
+        else if (betMatch = action.match(/(\d+)/)) {  // Extract betsize from Bet/Raise/AllIn
+            const betSize = parseInt(betMatch[1]);
+            setStack("vilainStackValue", stacks.vilainStackValue + vilainBetsize - betSize);
+            vilainBetsize = betSize;
+        }
     }
 
     function runTree() {
