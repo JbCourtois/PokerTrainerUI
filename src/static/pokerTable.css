@@ -1,0 +1,116 @@
+#pokerTableContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+#pokerTable {
+    width: 80%;
+    height: 150px;
+    display: flex;
+    background-color: #007200;
+    border: 10px solid #4d2600;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+
+    color: white;
+    font-size: 15px;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+}
+
+#tableGrid {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#tableGrid td {
+    padding: 10px;
+    text-align: center;
+}
+
+.card {
+    width: 48px;
+    height: 76px;
+}
+
+img.dealer-button {
+    width: 40px;
+    height: 40px;
+}
+
+.stack {
+    white-space: nowrap;
+    font-size: 25px;
+    color: white;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+}
+.bet-action {
+    font-size: 16px;
+    font-style: italic;
+}
+
+#container {
+    display: flex;
+}
+
+#separator {
+    width: 2px;
+    background-color: #4d2600;
+    margin: 20px;
+}
+
+#actionLog {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+#actionButtons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+#actionButtons div {
+    padding: 10px 20px;  /* Adjust padding as needed */
+    margin: 5px;        /* Adjust margin as needed */
+    width: 15%;
+    height: 70px;
+    cursor: pointer;
+    border-radius: 8px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    font-family: 'Consolas', monospace;
+    font-weight: bold;
+}
+
+/* Feedback icons */
+img.feedbackIcon {
+    display: inline-block;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+#feedbackWindow {
+    display: none;
+    position: absolute;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid black;
+    border-collapse: collapse;
+    border-radius: 10px;
+    text-align: center;
+}
+#feedbackWindow td {
+    border: 1px solid black;
+}

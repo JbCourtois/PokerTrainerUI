@@ -1,0 +1,6 @@
+{% load static %}
+{% load display_board %}
+
+{% for card in board|split_board %}
+<img src="{% static 'img/cards/'|add:card|add:'.png' %}" alt="{{ card }}">
+{% endfor %}

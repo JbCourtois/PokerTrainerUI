@@ -52,41 +52,7 @@
 </div>
 
 <script>
-    // Deck of cards
-    const suits = ['hearts', 'diamonds', 'clubs', 'spades'];
-    const ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
-
-    const deck = [];
-    for (const suit of suits) {
-        for (const rank of ranks) {
-            deck.push({ suit, rank });
-        }
-    }
-
-    // Function to shuffle the deck
-    function shuffleDeck() {
-        for (let i = deck.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [deck[i], deck[j]] = [deck[j], deck[i]];
-        }
-    }
-
-    // Function to deal cards
-    function dealCards() {
-        const player1Card1 = deck.pop();
-        const player2Card1 = deck.pop();
-        const player1Card2 = deck.pop();
-        const player2Card2 = deck.pop();
-
-        document.getElementById('player1Card1').innerText = `${player1Card1.rank} ${player1Card1.suit}`;
-        document.getElementById('player1Card2').innerText = `${player1Card2.rank} ${player1Card2.suit}`;
-        document.getElementById('player2Card1').innerText = `${player2Card1.rank} ${player2Card1.suit}`;
-        document.getElementById('player2Card2').innerText = `${player2Card2.rank} ${player2Card2.suit}`;
-    }
-
-    // Shuffle the deck and deal cards on page load
-    shuffleDeck();
-    dealCards();
+    // Code here
 </script>
 
 </body>

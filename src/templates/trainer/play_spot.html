@@ -1,0 +1,320 @@
+{% extends "base.html" %}
+{% load static %}
+{% load display_board %}
+
+{% block title %}Trainer{% endblock %}
+
+{% block banner %}{% endblock %}
+
+{% block body %}
+<h1>{{ spot.name }}</h1>
+
+{{ hand.tree|json_script:"gameTree" }}
+{{ spot.board|split_board|json_script:"gameBoard" }}
+
+<script type="text/javascript" src="/static/utils/cards.js"></script>
+
+<script>
+    const gameTree = JSON.parse(document.getElementById('gameTree').textContent);
+    const gameBoard = JSON.parse(document.getElementById('gameBoard').textContent);
+    const heroId = 1 - {{ hand.hero_is_oop|add:0 }};
+    const boardLabels = {
+        3: "Turn",
+        4: "River",
+    }
+
+    const betGradient = ['#FFBDBD', '#FF7B7B', '#FF0000'];
+    const actionColors = {
+        'Fold': '#3CD3FF',
+        'Check': '#7AFF7C',
+        'Call': '#7AFF7C',
+        'Bet': betGradient,
+        'Raise': betGradient,
+        'AllIn': '#DD9CFF',
+    };
+</script>
+
+<div id="container">
+    <div id="leftSide" style="width: 65%;">
+        <div id="pokerTableContainer">
+            <div id="pokerTable">
+                <table id="tableGrid">
+                    <tr class="stack">
+                        <td>H: <span id="heroStackValue">1000</span></td>
+                        <td class="bet-action" id="heroAction"></td>
+                        <td id="pot">Pot: <span id="potValue">800</span></td>
+                        <td class="bet-action" id="vilainAction"></td>
+                        <td>V: <span id="vilainStackValue">800</span></td>
+                    </tr>
+                    <tr>
+                        <td id="heroCards">
+                            {% include "utils/split_board.html" with board=hand.hero_hole only %}
+                        </td>
+                        <td class="dealer-button">
+                            {% if not hand.hero_is_oop %}
+                            <img class="dealer-button" src="{% static 'img/dealer.png' %}">
+                            {% endif %}
+                        </td>
+                        <td id="board">
+                            <img class="card boardCard" id="boardCard0" src="{% static 'img/cards/back.png' %}">
+                            <img class="card boardCard" id="boardCard1" src="{% static 'img/cards/back.png' %}">
+                            <img class="card boardCard" id="boardCard2" src="{% static 'img/cards/back.png' %}">
+                            <img class="card boardCard" id="boardCard3" src="{% static 'img/cards/back.png' %}">
+                            <img class="card boardCard" id="boardCard4" src="{% static 'img/cards/back.png' %}">
+                        </td>
+                        <td class="dealer-button">
+                            {% if hand.hero_is_oop %}
+                            <img class="dealer-button" src="{% static 'img/dealer.png' %}">
+                            {% endif %}
+                        </td>
+                        <td id="vilainCards">
+                            <img class="card" src="{% static 'img/cards/back.png' %}">
+                            <img class="card" src="{% static 'img/cards/back.png' %}">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- Decision buttons -->
+        <div id="actionButtons"></div>
+    </div>
+
+    <div id="separator"></div>
+
+    <div id="actionLog"></div>
+</div>
+
+<div id="links">
+    <p><a href="#" onclick="resetHand();event.preventDefault();">Replay hand</a></p>
+    <p><a href="">Play another hand in this spot</a></p>
+    <p><a href="/trainer/spots">Back to spots menu</a></p>
+</div>
+
+<table id="feedbackWindow">
+    <thead><tr>
+        <th></th>
+        <th>Action</th>
+        <th>Freq</th>
+        <th>EV</th>
+    </tr></thead>
+    <tbody id="feedbackTableBody"></tbody>
+</table>
+
+<script>
+    const actionLog = document.getElementById('actionLog');
+    const consoleLog = [];
+    const feedbacks = [];
+
+    var node = gameTree;
+    var boardNbCards = 0;
+    const stacks = {
+        "heroStackValue": 0,
+        "vilainStackValue": 0,
+        "potValue": 0,
+    };
+    var heroBetsize = 0;
+    var vilainBetsize = 0;
+
+    function resetHand() {
+        consoleLog.length = 0;
+        actionLog.innerHTML = '';
+
+        feedbacks.length = 0;
+        hideFeedbackWindow();
+
+        // Reset cards
+        boardNbCards = 0;
+        const cardElements = document.getElementsByClassName("boardCard");
+        Array.from(cardElements).forEach(elem => {
+            elem.src = "{% static 'img/cards/back.png' %}";
+        });
+        gameBoard.forEach(card => {addBoardCard(card);});
+        const formattedBoard = gameBoard.map(card => formatCard(card)).join(' ');
+        updateActionLog(`<p><b>—— Board: ${formattedBoard} ——</b></p>`);
+
+        // Reset stacks
+        resetBets();
+        setStack('heroStackValue', {{ spot.stack }});
+        setStack('vilainStackValue', {{ spot.stack }});
+        setStack('potValue', {{ spot.pot }});
+
+        // Go !
+        node = gameTree;
+        runTree();
+    }
+
+    function setStack(label, value) {
+        stacks[label] = value;
+        document.getElementById(label).innerHTML = value;
+    }
+
+    function resetBets() {
+        const actElements = document.getElementsByClassName("bet-action");
+        Array.from(actElements).forEach(elem => {
+            elem.innerHTML = "";
+        });
+
+        setStack("potValue", stacks.potValue + heroBetsize + vilainBetsize);
+        heroBetsize = 0;
+        vilainBetsize = 0;
+    }
+
+    function addBoardCard(card) {
+        const cardImg = document.getElementById(`boardCard${boardNbCards}`);
+        cardImg.src = `/static/img/cards/${card}.png`;
+        boardNbCards++;
+    }
+
+    function updateActionLog(value) {
+        const newLog = `<p>${value}</p>`;
+        consoleLog.push(newLog);
+        actionLog.innerHTML = consoleLog.join('');
+    }
+
+    function popLastLog() {
+        if (consoleLog.length > 0) {
+            consoleLog.pop();
+            actionLog.innerHTML = consoleLog.join('');
+        }
+    }
+
+    function updateActionButtons(actions) {
+        const actionsContainer = document.getElementById('actionButtons');
+        actionsContainer.innerHTML = '';
+
+        var betSize = 0;
+
+        for (const action in actions) {
+            const actionLabel = action.split('(')[0].trim();
+            var color = actionColors[actionLabel];
+            if (color.constructor === Array) {
+                color = color[betSize];
+                betSize++;
+            };
+
+            const button = document.createElement('div');
+            button.style.backgroundColor = color;
+            button.textContent = action;
+            button.addEventListener('click', () => {heroPlay(action)});
+
+            actionsContainer.appendChild(button);
+        };
+    }
+
+    function heroPlay(action) {
+        // Prepare feedback icon
+        const decisionId = feedbacks.length;
+        const feedbackLabel = getFeedbackLabel(node[1][action][0]);
+        feedbacks.push(node[1]);
+
+        // Build log
+        updateActionLog(`<p><b>Hero:</b> ${action} <img
+            id="feedbackIcon${decisionId}"
+            class="feedbackIcon"
+            src="/static/img/icons/${feedbackLabel}.svg"
+            onmouseover="showFeedbackWindow(${decisionId})"
+            onmouseout="hideFeedbackWindow()"
+            ></p>`);
+        document.getElementById('heroAction').innerHTML = action;
+
+        // Update stack display
+        if (action == "Call") {
+            setStack("heroStackValue", stacks.heroStackValue + heroBetsize - vilainBetsize);
+            heroBetsize = vilainBetsize;
+        }
+        else if (betMatch = action.match(/(\d+)/)) {  // Extract betsize from Bet/Raise/AllIn
+            const betSize = parseInt(betMatch[1]);
+            setStack("heroStackValue", stacks.heroStackValue + heroBetsize - betSize);
+            heroBetsize = betSize;
+        }
+
+        // Advance in tree
+        updateActionButtons();
+        node = node[2][action];
+        runTree();
+    }
+
+    function getFeedbackLabel(frequency) {
+        if (frequency == 1) {return "best"}
+        if (frequency > 0.1) {return "good"}
+        if (frequency > 0) {return "ok"}
+        return "fail";
+    }
+
+    function vilainLog(action) {
+        updateActionLog(`<p><b>Vilain:</b> ${action}</p>`);
+        document.getElementById('vilainAction').innerHTML = action;
+
+        // Update stack display
+        if (action == "Call") {
+            setStack("vilainStackValue", stacks.vilainStackValue + vilainBetsize - heroBetsize);
+            vilainBetsize = heroBetsize;
+        }
+        else if (betMatch = action.match(/(\d+)/)) {  // Extract betsize from Bet/Raise/AllIn
+            const betSize = parseInt(betMatch[1]);
+            setStack("vilainStackValue", stacks.vilainStackValue + vilainBetsize - betSize);
+            vilainBetsize = betSize;
+        }
+    }
+
+    function runTree() {
+        if (node == null) return;
+
+        if (node[0] == heroId) {
+            updateActionButtons(node[1]);
+        }
+        else if (node[0] == 1 - heroId) {
+            vilainLog(node[1]);
+            node = node[2];
+            runTree();
+        }
+        else if (node[0] == 2) {
+            resetBets();
+
+            const card = node[1];
+            const label = boardLabels[boardNbCards];
+            updateActionLog(`<p><b>—— ${label}: ${formatCard(card)} ——</b></p>`);
+            addBoardCard(card);
+
+            node = node[2];
+            runTree();
+        }
+    }
+
+    function showFeedbackWindow(decisionId) {
+        const feedbackWindow = document.getElementById('feedbackWindow');
+        feedbackWindow.style.display = 'block';
+
+        // Position on screen
+        const icon = document.getElementById(`feedbackIcon${decisionId}`);
+        const iconRect = icon.getBoundingClientRect();
+        const x = iconRect.left + window.scrollX + 30;
+        const y = iconRect.top + window.scrollY - 30;
+        feedbackWindow.style.left = `${x}px`;
+        feedbackWindow.style.top = `${y}px`;
+
+        // Fill table
+        const feedbackTable = document.getElementById('feedbackTableBody');
+        feedbackTable.innerHTML = '';
+        for (const [action, [freq, ev]] of Object.entries(feedbacks[decisionId])) {
+            const row = feedbackTable.insertRow();
+            const label = getFeedbackLabel(freq);
+            row.insertCell(0).innerHTML = `<img
+                class="feedbackIcon"
+                src="/static/img/icons/${label}.svg">`;
+            row.insertCell(1).innerHTML = action;
+            row.insertCell(2).innerHTML = freq;
+            row.insertCell(3).innerHTML = ev;
+        }
+    }
+
+    function hideFeedbackWindow() {
+        const feedbackWindow = document.getElementById('feedbackWindow');
+        feedbackWindow.style.display = 'none';
+    }
+
+    resetHand();
+</script>
+
+{% endblock %}
