@@ -1,13 +1,24 @@
 python-dateutil
 python-dotenv
+requests
+lxml
+
+# Analytics
+matplotlib
+numpy
+scipy
 
 # Django ORM
 django
-django-extensions
 gunicorn
 dj_database_url
 psycopg2-binary
 whitenoise
+
+# Jupyter notebook
+ipython
+jupyter
+django-extensions
 
 # 3rd party
 eval7
